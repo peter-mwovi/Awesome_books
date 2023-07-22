@@ -161,7 +161,7 @@ function getCurrentFormattedDate() {
 }
 
 // Update the innerHTML of the dateDiv with the formatted date
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const dateDiv = document.getElementById('date');
   dateDiv.innerHTML = getCurrentFormattedDate();
 });
