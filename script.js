@@ -35,8 +35,7 @@ class UI {
     if (target.classList.contains('delete')) {
       target.parentElement.remove();
       const title = target.previousElementSibling.textContent;
-      const author =
-        target.previousElementSibling.previousElementSibling.textContent;
+      const author = target.previousElementSibling.previousElementSibling.textContent;
       const book = new Book(title, author);
       UI.removeFromLocalStorage(book);
       UI.showAlert('Book removed', 'success');
@@ -70,7 +69,7 @@ class UI {
   static removeFromLocalStorage(book) {
     let books = UI.getBooksFromLocalStorage();
     books = books.filter(
-      (item) => item.title !== book.title || item.author !== book.author
+      (item) => item.title !== book.title || item.author !== book.author,
     );
     localStorage.setItem('books', JSON.stringify(books));
   }
